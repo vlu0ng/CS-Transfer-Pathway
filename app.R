@@ -4,10 +4,11 @@ library(shinydashboard)
 library(DT)
 library(formattable)
 library(dplyr)
+library(readr)
 library(shinyjs)
 
-foradmission <- read.csv("foradmission.csv", stringsAsFactors = FALSE)
-formajor <- read.csv("formajor.csv", stringsAsFactors = FALSE)
+foradmission <- read_csv("foradmission.csv")
+formajor <- read_csv("formajor.csv")
 
 ui <- dashboardPage(
   
@@ -139,8 +140,6 @@ dashboardSidebar(
     )
   )
 )
-
--------------------------------------------------------------------------------------------------
 
 #Shiny Apps Server
 server <- function(input, output) {
