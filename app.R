@@ -12,10 +12,10 @@ formajor <- read_csv("formajor.csv")
 
 ui <- dashboardPage(
   
-dashboardHeader(title = "UC Transfer Pathways"),
-  
-dashboardSidebar(
+  dashboardHeader(title = "UC Transfer Pathways"),
     
+  dashboardSidebar(
+      
     shinyjs::useShinyjs(),
     inlineCSS(list(.red = "font-weight: normal; padding-left: 20px ; padding-right: 20px",
                    .blue= "font-weight: normal; padding-left: 12px")),
