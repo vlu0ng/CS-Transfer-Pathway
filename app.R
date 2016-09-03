@@ -38,8 +38,6 @@ ui <- dashboardPage(
     
     inlineCSS( #Inline CSS for buttons and inputs
       list(.red    = "font-weight: normal; padding-left: 1px",
-           .green  = "font-weight: normal; padding-left: 4px; padding-right: 5px", 
-           .blue   = "font-weight: normal; padding-left: 20px", 
            .orange = "font-weight: normal; padding-left: 42px")),
     
     sidebarMenu(
@@ -139,8 +137,6 @@ ui <- dashboardPage(
 
 server <- function(input, output) {
   
-  
-  
   subset.foradmission <- eventReactive(input$submitInput, { 
     tbl_df(foradmission) %>% 
     filter(ID %in% input$programInput) %>%
@@ -197,10 +193,8 @@ server <- function(input, output) {
   })
   
   shinyjs::addClass("submit.button", "red")
-  #shinyjs::addClass("sidebarInput", "green")
   shinyjs::addClass("reset.button", "orange")
-  #shinyjs::addClass("download.button", "orange")
-  
+
 }
 
 shinyApp(ui, server)
