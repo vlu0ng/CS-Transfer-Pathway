@@ -54,7 +54,7 @@ ui <- dashboardPage(
                 admission requirements for the programs and campuses you are 
                 interested in. The dropdown menu below allows you to make 
                 multiple selections.</i><br><br>"), 
-          choices = campuses, selected = "Click to select", multiple = TRUE),
+          choices = campuses, selected = "", multiple = TRUE),
       
         column(3, div(id = "submit.button", 
           actionButton("submitInput","Submit", icon = icon("send"), width = '96px'))),
