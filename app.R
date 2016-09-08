@@ -8,11 +8,10 @@ library(shinydashboard)
 library(DT)
 library(formattable)
 library(dplyr)
-library(readr)
 library(shinyjs)
 
-foradmission <- read_csv("foradmission.csv")
-formajor <- read_csv("formajor.csv")
+foradmission <- read.csv("foradmission.csv")
+formajor <- read.csv("formajor.csv")
 
 campuses <- list('Click to select'= "", #Placeholder prompt
                  'UC Berkeley' = c(`Berkeley - CS, B.S.` = 'bcsbs'), 
@@ -46,16 +45,16 @@ ui <- dashboardPage(
       
       id = "sidebarInput",
         selectInput("programInput", 
-          HTML("<i>A Transfer Pathway is available for Computer Science because it
-               is one of the UC's top majors. The pathway is a single set of courses students
-               can take to prepare for admission to any of UC's nine undergraduate
-               campuses.<br><br>
+          HTML("<i>Computer science is one of UC's top majors offering a new 
+                Transfer Pathway: a single set of courses students can take 
+                to prepare for admission to any of UC’s nine undergraduate 
+                campuses.<br><br>
                
-               Use this tool to tailor your coursework to the specific
-               admission requirements for the programs and campuses you are interested in.
-               The dropdown menu below allows you to make multiple selections.
-               </i><br><br>"), 
-          choices = campuses, selected = "", multiple = TRUE),
+                Use this tool to tailor your coursework to the specific
+                admission requirements for the programs and campuses you are 
+                interested in. The dropdown menu below allows you to make 
+                multiple selections.</i><br><br>"), 
+          choices = campuses, selected = "Click to select", multiple = TRUE),
       
         column(3, div(id = "submit.button", 
           actionButton("submitInput","Submit", icon = icon("send"), width = '96px'))),
