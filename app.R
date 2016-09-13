@@ -184,7 +184,8 @@ server <- function(input, output) {
   })
   
   observeEvent(input$resetInput, {
-    shinyjs::reset("sidebarInput")
+    shinyjs::reset("sidebarInput") 
+    showNotification("Please make your selections", type = "message")
   })
   
   observe({
